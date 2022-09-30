@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="421" pageHeight="595" columnWidth="381" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="kode_diagnosa" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT
+     *,
+     diagnosa.`tanggal` AS diagnosa_tanggal,
+     diagnosa.`kode_diagnosa` AS diagnosa_kode_diagnosa,
+     diagnosa.`nama_pasien` AS diagnosa_nama_pasien,
+     diagnosa.`nama_dokter` AS diagnosa_nama_dokter,
+     diagnosa.`poli` AS diagnosa_poli,
+     diagnosa.`diagnosa` AS diagnosa_diagnosa,
+     diagnosa.`jenis_penyakit` AS diagnosa_jenis_penyakit,
+     diagnosa.`jenis_obat` AS diagnosa_jenis_obat
+FROM
+     `diagnosa` diagnosa
+WHERE
+     kode_diagnosa =$P{kode_diagnosa}]]>
+	</queryString>
+	<field name="no" class="java.lang.Integer"/>
+	<field name="kode_diagnosa" class="java.lang.String"/>
+	<field name="poli" class="java.lang.String"/>
+	<field name="nama_pasien" class="java.lang.String"/>
+	<field name="nama_dokter" class="java.lang.String"/>
+	<field name="diagnosa" class="java.lang.String"/>
+	<field name="jenis_penyakit" class="java.lang.String"/>
+	<field name="jenis_obat" class="java.lang.String"/>
+	<field name="tanggal" class="java.lang.String"/>
+	<field name="diagnosa_tanggal" class="java.lang.String"/>
+	<field name="diagnosa_kode_diagnosa" class="java.lang.String"/>
+	<field name="diagnosa_nama_pasien" class="java.lang.String"/>
+	<field name="diagnosa_nama_dokter" class="java.lang.String"/>
+	<field name="diagnosa_poli" class="java.lang.String"/>
+	<field name="diagnosa_diagnosa" class="java.lang.String"/>
+	<field name="diagnosa_jenis_penyakit" class="java.lang.String"/>
+	<field name="diagnosa_jenis_obat" class="java.lang.String"/>
+	<group name="kode_diagnosa">
+		<groupExpression><![CDATA[$F{kode_diagnosa}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="74" splitType="Stretch">
+			<staticText>
+				<reportElement x="138" y="25" width="101" height="35"/>
+				<textElement>
+					<font fontName="Impact" size="24"/>
+				</textElement>
+				<text><![CDATA[DIAGNOSA]]></text>
+			</staticText>
+			<line>
+				<reportElement x="27" y="60" width="317" height="1"/>
+			</line>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="394" splitType="Stretch">
+			<staticText>
+				<reportElement x="27" y="3" width="111" height="31"/>
+				<textElement>
+					<font fontName="Yu Gothic UI" size="14"/>
+				</textElement>
+				<text><![CDATA[Tanggal]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="223" y="3" width="158" height="31"/>
+				<textElement>
+					<font fontName="Yu Gothic UI" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tanggal}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="27" y="96" width="111" height="31"/>
+				<textElement>
+					<font fontName="Yu Gothic UI" size="14"/>
+				</textElement>
+				<text><![CDATA[Nama Pasien]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="223" y="96" width="158" height="31"/>
+				<textElement>
+					<font fontName="Yu Gothic UI" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nama_pasien}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="27" y="142" width="111" height="31"/>
+				<textElement>
+					<font fontName="Yu Gothic UI" size="14"/>
+				</textElement>
+				<text><![CDATA[Dokter]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="223" y="142" width="158" height="31"/>
+				<textElement>
+					<font fontName="Yu Gothic UI" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nama_dokter}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="27" y="187" width="111" height="31"/>
+				<textElement>
+					<font fontName="Yu Gothic UI" size="14"/>
+				</textElement>
+				<text><![CDATA[Poli]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="223" y="187" width="158" height="31"/>
+				<textElement>
+					<font fontName="Yu Gothic UI" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{poli}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="27" y="234" width="111" height="31"/>
+				<textElement>
+					<font fontName="Yu Gothic UI" size="14"/>
+				</textElement>
+				<text><![CDATA[Diagnosa]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="223" y="234" width="158" height="31"/>
+				<textElement>
+					<font fontName="Yu Gothic UI" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{diagnosa}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="27" y="278" width="111" height="31"/>
+				<textElement>
+					<font fontName="Yu Gothic UI" size="14"/>
+				</textElement>
+				<text><![CDATA[Jenis Penyakit]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="223" y="278" width="158" height="31"/>
+				<textElement>
+					<font fontName="Yu Gothic UI" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{jenis_penyakit}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="27" y="325" width="111" height="31"/>
+				<textElement>
+					<font fontName="Yu Gothic UI" size="14"/>
+				</textElement>
+				<text><![CDATA[Jenis Obat]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="223" y="325" width="158" height="31"/>
+				<textElement>
+					<font fontName="Yu Gothic UI" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{jenis_obat}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="27" y="47" width="111" height="31"/>
+				<textElement>
+					<font fontName="Yu Gothic UI" size="14"/>
+				</textElement>
+				<text><![CDATA[Kode Transaksi]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="223" y="47" width="158" height="31"/>
+				<textElement>
+					<font fontName="Yu Gothic UI" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{kode_diagnosa}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="138" y="3" width="43" height="31"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="138" y="96" width="43" height="31"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="138" y="47" width="43" height="31"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="138" y="234" width="43" height="31"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="138" y="187" width="43" height="31"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="138" y="142" width="43" height="31"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="138" y="325" width="43" height="31"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="138" y="278" width="43" height="31"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="1" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="145" splitType="Stretch"/>
+	</summary>
+</jasperReport>
